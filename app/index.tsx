@@ -1,7 +1,8 @@
 import DropDownMenu from '@/components/DropDownMenu';
+import ImageWithContext from '@/components/ImageWithContext';
 import { Stack } from 'expo-router';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 const index = () => {
 
@@ -10,9 +11,6 @@ const index = () => {
   };
   return (
     <View style={{ flex: 1 }}>
-      <Text>index</Text>
-
-
       <Stack.Screen
         options={{
           title: 'Home',
@@ -35,7 +33,7 @@ const index = () => {
         }}
       />
 
-
+      <ImageWithContext />
     </View>
   )
 }
