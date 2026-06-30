@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Pressable } from 'react-native';
+import { Image, Pressable, Text, View } from 'react-native';
 import * as ContextMenu from 'zeego/context-menu';
 const ImageWithContext = () => {
 
@@ -33,6 +33,14 @@ const ImageWithContext = () => {
                 </Pressable>
             </ContextMenu.Trigger>
             <ContextMenu.Content>
+                <ContextMenu.Preview>
+                    {() => (
+                        <View>
+                            <Text>Preview(will not work on android)</Text>
+                        </View>
+
+                    )}
+                </ContextMenu.Preview>
                 <ContextMenu.Item key="222" >
                     <ContextMenu.ItemTitle>Item 1</ContextMenu.ItemTitle>
                 </ContextMenu.Item>
@@ -47,6 +55,21 @@ const ImageWithContext = () => {
                         />
                     </ContextMenu.Item>
                 ))}
+
+                <ContextMenu.Item key={'42'}>
+                    <ContextMenu.ItemTitle>Shawaiz.dev</ContextMenu.ItemTitle>
+                    {/*this will not work for android */}
+                    <ContextMenu.ItemImage
+                        source={{
+                            uri: 'https://galaxies.dev/img/mika-space.png',
+                        }}
+                        height={100}
+                        width={100}
+
+                    />
+                </ContextMenu.Item>
+
+
             </ContextMenu.Content>
         </ContextMenu.Root>
     )
